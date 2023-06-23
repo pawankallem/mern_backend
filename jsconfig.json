@@ -1,0 +1,30 @@
+// {
+//     "compilerOptions": {
+//       "baseUrl": ".",
+//       "module": "commonjs",
+//       "paths": {
+//         "@/models/*": [
+//           "./src/models/*"
+//         ],
+//         "@/migrations/*": [
+//           "./src/migrations/*"
+//         ],
+//         "@/seeders/*": [
+//           "./src/seeders/*"
+//         ],
+//       },
+//       "plugins": [
+//         {
+//           "name": "typescript-eslint-language-service"
+//         }
+//       ],
+  
+//     },
+//     "include": [
+//       "src/**/*"
+//     ],
+//     "exclude": [
+//       "node_modules"
+//     ]
+//   }
+  

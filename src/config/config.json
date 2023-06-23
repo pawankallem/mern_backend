@@ -1,0 +1,10 @@
+{
+  "local": {
+    "host": "mongodb://localhost:27017/newmern",
+    "useNewUrlParser": true,
+    "useUnifiedTopology": true
+  },
+  "development": {
+    "link": "mongodb+srv://pavan:pavan_123@cluster0.fvvbk.mongodb.net/apartmentAndManager?retryWrites=true&w=majority"
+  }
+}
