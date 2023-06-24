@@ -22,7 +22,7 @@ const signUp = async (req, res) => {
   try {
     const { first_name, last_name, email, password } = req.body;
 
-    const emailExist = await User.findOne({ email });
+    const emailExist = await User.findOne({ email }).lean().exec();
     if (emailExist) res.status(409).send("Email already exists");
 
     const hashPassword = await bcrypt.hash(password, await bcrypt.genSalt(10));
@@ -46,7 +46,7 @@ const logIn = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email }).lean().exec();
     if (!user) res.status(404).send("Email not registered");
 
     const checkPassword = await bcrypt.compare(password, user.password);
