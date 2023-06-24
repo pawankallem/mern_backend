@@ -2,7 +2,7 @@ const Shop = require("../models/Shop");
 
 const getShopItems = async (req, res) => {
   try {
-    const shop = await Shop.find();
+    const shop = await Shop.find().lean().exec();
     if (!shop.length > 0) res.status(404).json("Items not found");
     res.status(201).json(shop);
   } catch (error) {
