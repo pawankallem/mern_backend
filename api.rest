@@ -1,7 +1,7 @@
 
-@baseURL = http://localhost:4600
+@baseURL = http://localhost:4000
 
-@email = "pk7@mailinator.com"
+@email = "test@mailinator.com"
 
 # @name signup
 POST {{baseURL}}/api/user/signup HTTP/1.1
@@ -11,7 +11,7 @@ Content-Type: application/json
     "first_name": "pavan",
     "last_name": "kallem",
     "email": {{email}},
-    "password": "pavan12345"
+    "password": "test1234"
 }
 
 ###

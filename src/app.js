@@ -8,6 +8,7 @@ const userRoute = require("./routes/userRoute.js");
 const shopRoute = require("./routes/shopRoute.js");
 
 const PORT = process.env.PORT || 4001;
+const NODE_ENV = process.env.NODE_ENV;
 const app = express();
 
 app.use(cors());
@@ -18,6 +19,11 @@ app.use("/api/user", userRoute);
 app.use("/api/item", shopRoute);
 
 app.listen(PORT, async () => {
-  console.log("🚀 ~ file: app.js:20 ~ PORT:", PORT);
-  await connect();
+  try {
+    await connect();
+    console.log(NODE_ENV);
+    console.log("🚀 ~ file: app.js:20 ~ PORT:", PORT);
+  } catch (error) {
+    console.log("🚀 ~ file: app.js:24 ~ error:", error);
+  }
 });
