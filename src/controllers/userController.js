@@ -52,7 +52,7 @@ const logIn = async (req, res) => {
     const checkPassword = await bcrypt.compare(password, user.password);
     if (!checkPassword) res.status(401).send("Email or password is wrong");
     const token = jwt.sign({ email }, process.env.SECRET_KEY_TO_ACCESS, {
-      expiresIn: "60s",
+      expiresIn: "30000s",
     });
     res.status(200).json({
       message: "Login successful",
